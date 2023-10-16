@@ -6,16 +6,28 @@ function click_ifr_button()
 {
 	const ifr_button_list = document.getElementById('select_IFR')
 	const vfr_button_list = document.getElementById('select_VFR')
+	const IFR_button = document.getElementById('IFR')
+	const VFR_button = document.getElementById('VFR')
+	document.getElementById('main_text').className = 'hidden';
+	button_style_reset();
 	vfr_button_list.classList = "hidden"
 	ifr_button_list.className = "IFR_button_list"
+	IFR_button.style.background = "#c9ff93";
+	VFR_button.style.background = "";
 }
 
 function click_vfr_button()
 {
 	const ifr_button_list = document.getElementById('select_IFR')
 	const vfr_button_list = document.getElementById('select_VFR')
+	const IFR_button = document.getElementById('IFR')
+	const VFR_button = document.getElementById('VFR')
+	document.getElementById('main_text').className = 'hidden';
+	button_style_reset();
 	ifr_button_list.classList = "hidden"
 	vfr_button_list.className = "VFR_button_list"
+	IFR_button.style.background = "";
+	VFR_button.style.background = "#c9ff93";
 }
 
 function get_vatsim_wx(icao)
@@ -41,6 +53,20 @@ function get_vatsim_wx(icao)
 	xhr.send();
 }
 
+function button_style_reset()
+{
+	document.getElementById('clearance').style.background = "";
+	document.getElementById('IFR_pushback').style.background = "";
+	document.getElementById('IFR_taxi').style.background = "";
+	document.getElementById('IFR_takeoff').style.background = "";
+	document.getElementById('IFR_landing').style.background = "";
+	document.getElementById('VFR_taxi').style.background = "";
+	document.getElementById('VFR_traffic_pattern').style.background = "";
+	document.getElementById('VFR_cross_ctz').style.background = "";
+	document.getElementById('VFR_takeoff').style.background = "";
+	document.getElementById('VFR_landing').style.background = "";
+}
+
 function show_text(type)
 {
 	airport = document.getElementById('airport').value;
@@ -48,6 +74,8 @@ function show_text(type)
 	rwy = document.getElementById('use_rwy').value;
 	main_text = document.getElementById('main_text');
 	main_text.className = "main_text"
+	button_style_reset()
+	document.getElementById(type).style.background = "#c9ff93";
 	switch(type){
 		case 'clearance':
 			main_text.innerHTML = "Cleared to [到着地] airport.<br>\

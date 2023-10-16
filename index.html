@@ -8,7 +8,7 @@
 	<script src="main.js"></script>
 </head>
 <body>
-	<h1>ATC用語ツール V.0.2.1</h1>
+	<h1>ATC用語ツール V.0.3.0</h1>
 	<h3>このツールは開発中です。機能リクエストや不具合等ありましたら、「くまさん」まで教えて頂けると助かります。</h3>
 	<div class="weather_input">
 		<div>AIRPORT</div>
@@ -19,8 +19,8 @@
 	<p id="raw_metar"></p>
 	<div class="main_contents">
 		<div class="rule_button_area">
-			<input type="button" value="IFR" onclick="click_ifr_button()">
-			<input type="button" value="VFR" onclick="click_vfr_button()">
+			<input id="IFR" type="button" value="IFR" onclick="click_ifr_button()">
+			<input id="VFR" type="button" value="VFR" onclick="click_vfr_button()">
 		</div>
 		<div class="contents_area">
 			<div id="select_IFR" class="hidden">
