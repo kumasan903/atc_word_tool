@@ -8,19 +8,15 @@
 	<script src="main.js"></script>
 </head>
 <body>
-	<h1>ATC用語ツール V.0.1</h1>
+	<h1>ATC用語ツール V.0.2</h1>
 	<h3>このツールは開発中です。機能リクエストや不具合等ありましたら、「くまさん」まで教えて頂けると助かります。</h3>
 	<div class="weather_input">
+		<div>AIRPORT</div>
+		<input id="airport" type="text" value="RJTT">
 		<div>RWY</div>
 		<input id="use_rwy" type="text" value="10">
-		<div>Wind</div>
-		<input id="wind_direction" type="text" value="030">
-		<div>AT</div>
-		<input id="wind_speed" type="text" value="5">
-		<div>KT</div>
-		<div>QNH</div>
-		<input id="qnh_input" type="text" value="29.92">
 	</div>
+	<p id="raw_metar"></p>
 	<div class="main_contents">
 		<div class="rule_button_area">
 			<input type="button" value="IFR" onclick="click_ifr_button()">

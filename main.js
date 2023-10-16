@@ -1,3 +1,7 @@
+let wind;
+let speed;
+let qnh;
+
 function click_ifr_button()
 {
 	const ifr_button_list = document.getElementById('select_IFR')
@@ -14,12 +18,34 @@ function click_vfr_button()
 	vfr_button_list.className = "VFR_button_list"
 }
 
+function get_vatsim_wx(icao)
+{
+	const xhr = new XMLHttpRequest();
+	xhr.open("GET", "https://metar.vatsim.net/" + icao, true);
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4 && xhr.status === 200)
+		{
+			let qnh_hpa;
+			let tmp;
+			const response_text = xhr.responseText;
+			document.getElementById('raw_metar').innerHTML = response_text;
+			console.log(response_text);
+			tmp = this.response.indexOf('K', 4);
+			wind = response_text.substring(tmp - 5, tmp - 2);
+			speed = response_text.substring(tmp - 2, tmp);
+			tmp = response_text.indexOf('Q', 4)
+			qnh_hpa = parseInt(response_text.substring(tmp+1, tmp+5));
+			qnh = String(Math.round(qnh_hpa / 0.3386));
+		}
+	};
+	xhr.send();
+}
+
 function show_text(type)
 {
+	airport = document.getElementById('airport').value;
+	get_vatsim_wx(airport);
 	rwy = document.getElementById('use_rwy').value;
-	wind = document.getElementById('wind_direction').value;
-	speed = document.getElementById('wind_speed').value;
-	qnh = document.getElementById('qnh_input').value;
 	main_text = document.getElementById('main_text');
 	main_text.className = "main_text"
 	switch(type){
