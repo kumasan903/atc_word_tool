@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ATC用語</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="main.js"></script>
+</head>
+<body>
+	<h1>ATC用語ツール V.0.1</h1>
+	<h3>このツールは開発中です。機能リクエストや不具合等ありましたら、「くまさん」まで教えて頂けると助かります。</h3>
+	<div class="weather_input">
+		<div>RWY</div>
+		<input id="use_rwy" type="text" value="10">
+		<div>Wind</div>
+		<input id="wind_direction" type="text" value="030">
+		<div>AT</div>
+		<input id="wind_speed" type="text" value="5">
+		<div>KT</div>
+		<div>QNH</div>
+		<input id="qnh_input" type="text" value="29.92">
+	</div>
+	<div class="main_contents">
+		<div class="rule_button_area">
+			<input type="button" value="IFR" onclick="click_ifr_button()">
+			<input type="button" value="VFR" onclick="click_vfr_button()">
+		</div>
+		<div class="contents_area">
+			<div id="select_IFR" class="hidden">
+				<input type="button" id="clearance" value="クリアランス" onclick="show_text(this.id)">
+				<input type="button" id="IFR_pushback" value="プッシュバック" onclick="show_text(this.id)">
+				<input type="button" id="IFR_taxi" value="タキシング" onclick="show_text(this.id)">
+				<input type="button" id="IFR_takeoff" value="離陸" onclick="show_text(this.id)">
+				<input type="button" id="IFR_landing" value="着陸" onclick="show_text(this.id)">
+			</div>
+			<div id="select_VFR" class="hidden">
+				<input type="button" id="VFR_taxi" value="タキシング" onclick="show_text(this.id)">
+				<input type="button" id="VFR_takeoff" value="離陸" onclick="show_text(this.id)">
+				<input type="button" id="VFR_traffic_pattern" value="トラパタ" onclick="show_text(this.id)">
+				<input type="button" id="VFR_landing" value="着陸" onclick="show_text(this.id)">
+				<input type="button" id="VFR_cross_ctz" value="管制圏横断" onclick="show_text(this.id)">
+			</div>
+			<p id="main_text" class="hidden"></p>
+		</div>
+	</div>
+</body>
+</html>

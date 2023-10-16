@@ -1,0 +1,75 @@
+body
+{
+	width: 70%;
+	margin-inline: auto;
+}
+
+h1
+{
+	text-align: center;
+}
+
+h3
+{
+	text-align: center;
+	color: gray;
+}
+
+.hidden
+{
+	display: none;
+}
+
+input
+{
+	height: 50px;
+	width: 19%;
+	font-size: x-large;
+}
+
+.rule_button_area
+{
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.rule_button_area input
+{
+	margin-inline: auto;
+	font-size: xx-large;
+}
+
+.weather_input
+{
+	margin-bottom: 30px;
+	display: flex;
+	padding-inline: 10%;
+	padding-block: 5px;
+	background-color: #93ff93;
+}
+
+.contents_area .IFR_button_list, .contents_area .VFR_button_list
+{
+	display: flex;
+}
+
+.contents_area div input
+{
+	margin-inline: auto;
+	font-size: medium;
+}
+
+.weather_input div, .weather_input input
+{
+	line-height: 50px;
+	text-align: center;
+	margin-inline: auto;
+	font-size: xx-large;
+	width: 15%;
+}
+
+#main_text
+{
+	font-size: xx-large;
+	color: #222;
+}
